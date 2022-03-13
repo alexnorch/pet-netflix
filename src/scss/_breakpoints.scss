@@ -1,0 +1,37 @@
+@use './variables' as *;
+
+// $xs: 0;
+// $sm: 576px;
+// $md: 768px;
+// $lg: 992px;
+// $xxl: 1200px;
+
+@mixin media-breakpoint-xs {
+    @media only screen and (min-width: $xs) {
+        @content;
+    }
+}
+
+@mixin media-breakpoint-sm {
+    @media only screen and (min-width: $sm) {
+        @content;
+    }
+}
+
+@mixin media-breakpoint-md {
+    @media only screen and (min-width: $md) {
+        @content;
+    }
+}
+
+@mixin media-breakpoint-lg {
+    @media only screen and (min-width: $lg) {
+        @content;
+    }
+}
+
+@mixin media-breakpoint-xxl {
+    @media only screen and (min-width: $xxl) {
+        @content;
+    }
+}

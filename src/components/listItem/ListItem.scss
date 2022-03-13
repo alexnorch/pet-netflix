@@ -1,0 +1,44 @@
+@use '../../scss/' as *;
+
+.list-item {
+    position: relative;
+    height: 160px;
+    margin-right: 5px;
+    flex-shrink: 0;
+    cursor: pointer;
+    color: #fff;
+    
+    &.similar {
+        @include media-breakpoint-xs {
+            height: 160px;
+        }
+
+        @include media-breakpoint-md {
+            height: 350px;
+        }
+    }
+
+    &__info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding: 10px;
+
+        h3 {
+            font-size: 16px;
+            @include media-breakpoint-md {
+                font-size: 18px;
+            }
+        }
+    }
+    
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+}

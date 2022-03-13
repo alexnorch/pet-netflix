@@ -1,0 +1,120 @@
+@use '../../scss/' as *;
+
+.featured {
+    height: 90vh;
+
+    h1 {
+        font-size: 24px;
+        @include media-breakpoint-md {
+            font-size: 32px;
+        }
+    }
+
+    &__background {
+        height: 100%;
+        width: 100%;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__background.blured {
+        filter: blur(7px);
+    }
+    
+    &__content {
+        position: absolute;   
+        top: 200px;
+
+        @include media-breakpoint-sm {
+            top: 300px;
+        }
+
+        @include media-breakpoint-lg {
+            top: 350px;
+        }
+    }
+    
+    &__info {
+        left: 50px;
+        color: $white-color;
+        margin-bottom: 50px;
+
+        @include media-breakpoint-xs {
+            width: 80%;
+        }
+
+        @include media-breakpoint-lg {
+            width: 35%;
+        }
+    }
+
+    &__description {
+        display: inline-block;
+        margin: 20px 0;
+        font-size: 14px;
+
+        @include media-breakpoint-md {
+            font-size: 16px;
+        }
+    }
+
+    &__buttons {
+        display: flex;
+
+        button {
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: 500;
+            margin-right: 10px;
+            @include flex(center, center);
+            @include media-breakpoint-md {
+                font-size: 18px;
+            }
+
+            span {
+                margin-left: 5px;
+            }
+
+            &.play {
+                background-color: $white-color;
+                color: #0f0f0f;
+            }
+
+            &.info {
+                background-color: $gray-color;
+                color: $white-color;
+            }
+        }
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+}
+
+.featured.minimize {
+    position: relative;
+    height: 40vh;
+
+    .play {
+        position: absolute;
+        z-index: 5;
+        @include flex(center, space-evenly);
+        box-shadow: 0 0 4px 4px rgba(0,0,0,0.2);
+        background: $red-color;
+        color: $white-color;
+        border-radius: 3px;
+        width: 100px;
+        height: 40px;
+        top: 100%;
+        left: 0;
+    }
+}
