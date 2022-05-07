@@ -1,15 +1,14 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import "./AllMovies.scss";
+import "../movies/AllMovies.scss";
 
-import ListItem from "../components/listItem/ListItem";
+import ListItem from "../../components/listItem/ListItem";
 import Pagination from "@mui/material/Pagination";
 import Skeleton from '@mui/material/Skeleton';
 import Stack from "@mui/material/Stack";
 import Box from '@mui/material/Box';
 
 const baseURL = "https://api.themoviedb.org/3/movie/";
-const apiKey = "b5734930c9753019953c02e83f2a0d0b";
 
 const AllMovies = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -20,7 +19,7 @@ const AllMovies = () => {
   useEffect(() => {
     const getCategory = async () => {
       const response = await fetch(
-        `${baseURL}${category}?api_key=${apiKey}&language=en-US&page=${currentPage}`
+        `${baseURL}${category}?api_key=${process.env.REACT_APP_API}&language=en-US&page=${currentPage}`
       );
       const movieData = await response.json();
 

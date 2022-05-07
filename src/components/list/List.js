@@ -3,6 +3,7 @@ import { Navigation, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { displayType } from '../../utils/index'
 import "./List.scss";
 
 // Import Swiper styles
@@ -13,19 +14,6 @@ import "swiper/css/scrollbar";
 
 import Skeleton from "@mui/material/Skeleton";
 import Stack from "@mui/material/Stack";
-
-const displayType = (type) => {
-  switch (type) {
-    case "upcoming":
-      return "Upcoming movies";
-    case "now_playing":
-      return "New movies";
-    case "popular":
-      return "Popular movies";
-    default:
-      return 'Other movies'
-  }
-};
 
 const List = ({ type }) => {
   const [movies, setMovies] = useState([]);

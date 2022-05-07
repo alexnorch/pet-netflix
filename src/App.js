@@ -2,15 +2,15 @@ import './App.scss'
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
-
 //Components
-import Home from './pages/Home';
-import MovieDetails from './pages/MovieDetails';
-import AllMovies from './pages/AllMovies';
-import MyList from './pages/MyList';
 import Navbar from './ui/Navbar';
-import SignIn from './pages/SignIn';
-import SignUp from './pages/SignUp';
+
+// Pages
+import Home from './pages/home/Home';
+import Details from './pages/details/MovieDetails'
+import Profile from './pages/profile/MyList'
+import Movies from './pages/movies/AllMovies'
+import Auth from './pages/auth/Auth';
 
 function App() {
   const isLogged = useSelector(state => state.profile.isLogged)
@@ -20,11 +20,10 @@ function App() {
       <Navbar />
       <Routes>
         <Route path='/' element={<Home/>}/>
-        <Route path='/movie/:movieId' element={<MovieDetails/>}/>
-        <Route path='/movies/:category' element={<AllMovies/>}/>
-        <Route path='/my-list' element={ isLogged ? <MyList /> : <Navigate to='/signin'/> }/>
-        <Route path='/signin' element={ isLogged ? <Home/> : <SignIn />}/>
-        <Route path='/signup' element={ isLogged ? <Home/> : <SignUp />}/>
+        <Route path='/movie/:movieId' element={<Details/>}/>
+        <Route path='/movies/:category' element={<Movies/>}/>
+        <Route path='/my-list' element={ isLogged ? <Profile /> : <Navigate to='/signin'/> }/>
+        <Route path='/auth' element={ isLogged ? <Home/> : <Auth/> }/>
       </Routes>
     </>
   );

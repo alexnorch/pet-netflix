@@ -14,8 +14,6 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Drawer from "@mui/material/Drawer";
 import Box from "@mui/material/Box";
 
-const apiKey = "b5734930c9753019953c02e83f2a0d0b";
-
 let initialRequest = false;
 
 const Navbar = () => {
@@ -35,7 +33,7 @@ const Navbar = () => {
   useEffect(() => {
     const getSearchedMovies = async () => {
       const response = await fetch(`
-      https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=en-US&query=${inputValue}`);
+      https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_API}&language=en-US&query=${inputValue}`);
       const result = await response.json();
 
       setSearchedMovies(result.results);
@@ -143,7 +141,7 @@ const Navbar = () => {
               </div>
             ) : (
               <button
-                onClick={() => navigate("/signin")}
+                onClick={() => navigate("/auth")}
                 className="nav-btn"
               >
                 Sign in
@@ -207,7 +205,7 @@ const Navbar = () => {
               Log out
             </button>
           ) : (
-            <button onClick={() => navigate("/signin")} className="nav-btn">
+            <button onClick={() => navigate("/auth")} className="nav-btn">
               Sign in
             </button>
           )}

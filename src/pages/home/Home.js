@@ -1,7 +1,7 @@
-import Featured from "../components/featured/Featured";
-import List from "../components/list/List";
-import './Home.scss'
-import '../App.scss'
+import Featured from "../../components/featured/Featured";
+import List from "../../components/list/List";
+import '../home/Home.scss'
+import '../../App.scss'
 
 const Home = () => {
   document.body.style.background = '#adababd2'

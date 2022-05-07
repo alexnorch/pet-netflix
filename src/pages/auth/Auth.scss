@@ -1,4 +1,4 @@
-@use '../scss/' as *;
+@use '../../scss/' as *;
 
 .auth {
     margin-top: 200px;
@@ -9,6 +9,13 @@
         margin-top: 20px;
         color: $white-color;
         text-align: center;
+    }
+
+    &__button {
+        text-decoration: underline;
+        background: none;
+        font-size: 20px;
+        color: #fff;
     }
 
     &__link {

@@ -2,6 +2,7 @@ import './ListItem.scss'
 import { useNavigate } from 'react-router-dom';
 
 export default function ListItem({posterPath, id, title, average, variant}) {
+
   const navigate = useNavigate()
 
   const switchItem = () => {

@@ -9,8 +9,6 @@ import CloseIcon from '@mui/icons-material/Close';
 import Skeleton from "@mui/material/Skeleton";
 import Stack from "@mui/material/Stack";
 
-const apiKey = "b5734930c9753019953c02e83f2a0d0b";
-
 export default function Featured() {
   const [movie, setMovie] = useState([]);
   const [isHeaderLoaded, setIsHeaderLoaded] = useState(false);
@@ -21,7 +19,7 @@ export default function Featured() {
     const getMovies = async () => {
       const randomIndex = Math.round(Math.random() * 20);
       const response = await fetch(
-        `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`
+        `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_API}&language=en-US&page=1`
       );
       const movieData = await response.json();
 

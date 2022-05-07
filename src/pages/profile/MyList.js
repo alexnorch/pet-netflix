@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
-import ListItem from "../components/listItem/ListItem";
-import "./MyList.scss";
+import ListItem from "../../components/listItem/ListItem";
+import "../profile/MyList.scss";
 
 const MyList = () => {
   const myList = useSelector((state) => state.profile.movieList);
