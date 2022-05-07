@@ -3,7 +3,7 @@ import './Search.scss'
 
 const Search = (props) => {
   const navigate = useNavigate()
-  const withoutImage = 'https://evroprom.com/wp-content/themes/europrom/assets/img/no-image-icon.png'
+  const noImage = 'https://evroprom.com/wp-content/themes/europrom/assets/img/no-image-icon.png'
   
   return (
     <div className="nav-search">
@@ -31,7 +31,7 @@ const Search = (props) => {
                         src={
                             backdrop_path
                             ? `https://image.tmdb.org/t/p/w500${backdrop_path}`
-                            : withoutImage
+                            : noImage
                         }
                         alt={title}
                         />

@@ -38,8 +38,8 @@ export default function Featured() {
             <Iframe id={movie?.id} />
           ) : (
             <img
-              src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-              alt={movie.title}
+              src={`https://image.tmdb.org/t/p/w500${movie?.poster_path}`}
+              alt={movie?.title}
             />
           ))}
       </div>
@@ -49,7 +49,7 @@ export default function Featured() {
             <div className="featured__info">
               {isHeaderLoaded ? (
                 <>
-                  <h1>{movie.title}</h1>
+                  <h1>{movie?.title}</h1>
                   <p className="featured__description">
                     {movie?.overview.length > 220
                       ? movie.overview.substring(0, 220) + "..."

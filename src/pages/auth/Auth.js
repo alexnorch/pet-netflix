@@ -28,26 +28,27 @@ const Auth = () => {
             password: '',
             confirmPassword: ''
         },
-        validationSchema: isSignIn ?
-            Yup.object({
-                email: Yup.string()
-                    .email('Please enter a valid email')
-                    .required('Email is required'),
-                password: Yup.string()
-                    .min(6, 'Must be greater then 6 characters')
-                    .required('Password is required')
-            }) :
-            Yup.object({
-                email: Yup.string()
-                    .email('Please enter a valid email')
-                    .required('Email is required'),
-                password: Yup.string()
-                    .min(6, 'Must be greater then 6 characters')
-                    .required('Password is required'),
-                confirmPassword: Yup.string()
-                    .required('Confirm your passord')
-                    .oneOf([Yup.ref('password')], 'Your password do not match')
-            }),
+        validationSchema: 
+            isSignIn ?
+                Yup.object({
+                    email: Yup.string()
+                        .email('Please enter a valid email')
+                        .required('Email is required'),
+                    password: Yup.string()
+                        .min(6, 'Must be greater then 6 characters')
+                        .required('Password is required')
+                }) :
+                Yup.object({
+                    email: Yup.string()
+                        .email('Please enter a valid email')
+                        .required('Email is required'),
+                    password: Yup.string()
+                        .min(6, 'Must be greater then 6 characters')
+                        .required('Password is required'),
+                    confirmPassword: Yup.string()
+                        .required('Confirm your passord')
+                        .oneOf([Yup.ref('password')], 'Your password do not match')
+                }),
         onSubmit: ({ email, password }) => {
             authHandler(email, password)
         }

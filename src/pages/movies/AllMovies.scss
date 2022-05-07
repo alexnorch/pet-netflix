@@ -2,12 +2,12 @@
 
 .all-movies {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     gap: 10px;
 
     @include media-breakpoint-md {
-        flex-direction: column;
+        flex-direction: row;
     }
 
     .list-item {

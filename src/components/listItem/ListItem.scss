@@ -2,8 +2,10 @@
 
 .list-item {
     position: relative;
-    height: 160px;
+    height: 200px;
     margin-right: 5px;
+    border-radius: 10px;
+    overflow: hidden;
     flex-shrink: 0;
     cursor: pointer;
     color: #fff;
@@ -29,6 +31,7 @@
 
         h3 {
             font-size: 16px;
+            font-weight: 500;
             @include media-breakpoint-md {
                 font-size: 18px;
             }

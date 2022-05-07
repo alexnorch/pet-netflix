@@ -3,7 +3,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 //Components
-import Navbar from './ui/Navbar';
+import Navbar from './ui/navbar/Navbar';
 
 // Pages
 import Home from './pages/home/Home';

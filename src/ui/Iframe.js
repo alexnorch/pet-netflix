@@ -1,14 +1,11 @@
 import { useEffect, useState } from "react";
 
-const apiKey = "b5734930c9753019953c02e83f2a0d0b";
-
 const Iframe = ({ id, title }) => {
   const [movieMedia, setMovieMedia] = useState([]);
+
   useEffect(() => {
     const getVideo = async () => {
-      const response = await fetch(
-        `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${apiKey}&language=en-US`
-      );
+      const response = await fetch(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=${process.env.REACT_APP_API}&language=en-US`);
       const data = await response.json();
 
       setMovieMedia(data.results[0]);

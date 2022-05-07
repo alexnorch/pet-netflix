@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { logout } from "../store/profileSlice";
+import { logout } from "../../store/profileSlice";
 
-import Search from "./Search";
-import logo from "../images/Logonetflix.png";
-import profil from "../images/profil.jpg";
-import "../ui/Navbar.scss";
+import Search from "../search/Search";
+import logo from "../../images/Logonetflix.png";
+import profil from "../../images/profil.jpg";
+import "../navbar/Navbar.scss";
 
 import SearchIcon from "@mui/icons-material/Search";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
@@ -83,18 +83,13 @@ const Navbar = () => {
               src={logo}
               alt="logo"
             />
-
             <ul className="nav-list">
               <li className="nav-list__item">
-                <Link className="nav-list__link" to="/">
-                  Home
-                </Link>
+                <Link className="nav-list__link" to="/">Home</Link>
               </li>
               {isLogged && (
                 <li className="nav-list__item">
-                  <Link className="nav-list__link" to="my-list">
-                    My list
-                  </Link>
+                  <Link className="nav-list__link" to="my-list">My list</Link>
                 </li>
               )}
             </ul>
@@ -128,11 +123,8 @@ const Navbar = () => {
                 {isSubmenuActive && (
                   <div className="profile__submenu">
                     <ul
-                      onClick={() =>
-                        setIsSubmenuActive((prevState) => !prevState)
-                      }
-                      className="profile__options"
-                    >
+                      onClick={() => setIsSubmenuActive((prevState) => !prevState)}
+                      className="profile__options">
                       <li>Settings</li>
                       <li onClick={() => dispatch(logout())}>Log out</li>
                     </ul>
@@ -188,15 +180,11 @@ const Navbar = () => {
           )}
           <ul className="nav-list">
             <li className="nav-list__item">
-              <Link className="nav-list__link" to="/">
-                Home
-              </Link>
+              <Link className="nav-list__link" to="/"> Home</Link>
             </li>
             {isLogged && (
               <li className="navbar__list-item">
-                <Link className="nav-list__link" to="my-list">
-                  My list
-                </Link>
+                <Link className="nav-list__link" to="my-list"> My list </Link>
               </li>
             )}
           </ul>

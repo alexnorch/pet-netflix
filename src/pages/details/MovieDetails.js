@@ -37,7 +37,6 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 
 const MovieDetails = () => {
   const [movieData, setMovieData] = useState({})
-
   const [isLoaded, setIsLoaded] = useState(false)
   const [isAlertOpen, setIsAlertOpen] = useState(false)
   const [alertMessage, setAlertMessage] = useState('')
@@ -47,6 +46,7 @@ const MovieDetails = () => {
   const movieId = pathname.replace(/[^0-9.]/g, "")
   const isLogged = useSelector(state => state.profile.isLogged)
   const myList = useSelector(state => state.profile.movieList)
+  const movieGenres = movieData?.details?.genres.map(item => item.name)
   const alreadyInList = myList.some(item => item.id === movieData?.details?.id)
 
   // Getting movie information
@@ -72,7 +72,7 @@ const MovieDetails = () => {
       setAlertMessage('Successfully added to your list')
       setIsAlertOpen(true)
     } else {
-      navigate('/signin')
+      navigate('/auth')
     }
   }
 
@@ -132,7 +132,7 @@ const MovieDetails = () => {
                   )}
                 </div>
                 <div className="movie-content__middle">
-                  <p>[ {movieData?.details?.genresList?.join(", ").toLowerCase()} ]</p>
+                  <p>[ {movieGenres?.join(", ").toLowerCase()} ]</p>
                   <p className="movie-content__description">{movieData?.details?.overview}</p>
                   <h3>Language:</h3>
                   {movieData?.details?.spoken_languages.map((item, index) => (

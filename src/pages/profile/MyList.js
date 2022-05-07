@@ -4,8 +4,7 @@ import "../profile/MyList.scss";
 
 const MyList = () => {
   const myList = useSelector((state) => state.profile.movieList);
-  document.body.style.background = "#adababd2";
-
+  
   return (
     <main>
       <div className="container">

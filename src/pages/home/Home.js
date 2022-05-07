@@ -4,7 +4,6 @@ import '../home/Home.scss'
 import '../../App.scss'
 
 const Home = () => {
-  document.body.style.background = '#adababd2'
   return (
     <>
       <Featured/>
